@@ -1,0 +1,88 @@
+#increment this to force a gradle cache refresh: 1
+
+[versions]
+jdk = "21"
+
+fmodel = "3.5.0"
+kotlin = "2.0.0"
+kotlin-wrappers = "1.0.0-pre.800"
+kotlinx-coroutines = "1.9.0"
+kotlinx-datetime = "0.4.0"
+kotlinx-serialisation = "1.6.1"
+log4k = "1.4.1"
+
+# Testing
+mockkmp = "2.0.2"
+kotest = "5.9.+"
+mockito = "5.+"
+
+# Application server
+quarkus-platform = "3.20.0"
+
+#KSP Promisify libraries
+ksp = "2.0.0-+"
+
+[libraries]
+### Inter-project dependencies
+shared-sdk = { group = "au.com.me", name = "sdk" }
+###
+
+fmodel-application-arrow = { module = "com.fraktalio.fmodel:application-arrow", version.ref = "fmodel" }
+
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+
+kotlin-wrappers-bom = { module = "org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom", version.ref = "kotlin-wrappers" }
+kotlin-wrappers-js = { module = "org.jetbrains.kotlin-wrappers:kotlin-js", version.ref = "kotlin-wrappers" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialisation" }
+kotlinx-coroutines-bom = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-bom", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-coreJs = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+vertx-lang-coroutines = { module = "io.vertx:vertx-lang-kotlin-coroutines", version = "4.5.14" }
+log4k = { module = "de.peilicke.sascha:log4k", version.ref = "log4k" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito" }
+
+# Quarkus
+quarkus-platform-bom = { module = "io.quarkus.platform:quarkus-bom", version.ref = "quarkus-platform" }
+quarkus-cache = { module = "io.quarkus:quarkus-cache" }
+quarkus-elytronSecurityProperties = { module = "io.quarkus:quarkus-elytron-security-properties-file" }
+quarkus-kotlin = { module = "io.quarkus:quarkus-kotlin" }
+quarkus-kubernetes = { module = "io.quarkus:quarkus-kubernetes" }
+quarkus-micrometerRegistryPrometheus = { module = "io.quarkus:quarkus-micrometer-registry-prometheus" }
+quarkus-oidc = { module = "io.quarkus:quarkus-oidc" }
+quarkus-security = { module = "io.quarkus:quarkus-security" }
+quarkus-smallrye-health = { module = "io.quarkus:quarkus-smallrye-health" }
+quarkus-smallrye-openapi = { module = "io.quarkus:quarkus-smallrye-openapi" }
+quarkus-messaging = { module = "io.quarkus:quarkus-smallrye-reactive-messaging" }
+quarkus-googleCloudServices-bom = { module = "io.quarkus.platform:quarkus-google-cloud-services-bom", version.ref = "quarkus-platform" }
+quarkus-narayana-jta = { module = "io.quarkus:quarkus-narayana-jta", version.ref = "quarkus-platform" }
+
+# Testing
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+# Quarkus Test
+quarkus-junit5-mockito = { module = "io.quarkus:quarkus-junit5-mockito" }
+quarkus-test-security = { module = "io.quarkus:quarkus-test-security" }
+
+[plugins]
+# others
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-plugin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
+kotlin-plugin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+kotlin-plugin-mockkmp = { id = "org.kodein.mock.mockmp", version.ref = "mockkmp" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+kotest-multiplatform = { id = "io.kotest.multiplatform", version.ref = "kotest" }
+
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+gradle-dockerCompose = { id = "com.avast.gradle.docker-compose", version = "0.17.+" }
+taskTree = { id = "com.dorongold.task-tree", version = "2.1.+" }
+
+quarkus = { id = "io.quarkus", version.ref = "quarkus-platform" }
+jandex = { id = "org.kordamp.gradle.jandex", version = "2.1.0" }
+
